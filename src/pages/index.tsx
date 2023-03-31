@@ -10,7 +10,7 @@ const Home: React.FC = () => {
   const [weather, setWeather] = useState<WeatherCardProps | null>(null);
   const [forecast, setForecast] = useState<WeatherForecastProps | null>(null);
 
-  const url = "https://weather-app-backend-75safhsjp-rjrobben.vercel.app"
+  const url = "https://weather-app-backend-e9q1xajl5-rjrobben.vercel.app"
 
   const postData = (endpoint: string, email: string, password: string, login: boolean) => {
     fetch(url + endpoint, {
