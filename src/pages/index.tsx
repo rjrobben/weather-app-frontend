@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import SearchBar from '../components/search-bar';
 import WeatherCard from '../components/weather-card';
+import WeatherForecast from '../components/weather-forecast';
 import { WeatherCardProps } from '../components/weather-card';
+import { WeatherForecastProps } from '../components/weather-forecast';
 
 const Home: React.FC = () => {
   const [loggedIn, setLoggedIn] = useState(false);
@@ -43,6 +45,8 @@ const Home: React.FC = () => {
         location={weather.location}
         weather={weather.weather}
       />}
+      {/* forecast for three days WeatherCard */}
+      {loggedIn && forecast && <WeatherForecast data={forecast} />}
   );
 };
 
