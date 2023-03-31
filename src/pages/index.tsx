@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import SearchBar from '../components/search-bar';
+import WeatherCard from '../components/weather-card';
+import { WeatherCardProps } from '../components/weather-card';
 
 const Home: React.FC = () => {
   const [loggedIn, setLoggedIn] = useState(false);
@@ -37,6 +39,10 @@ const Home: React.FC = () => {
 
       {/* after login search bar and weather card */}
       {loggedIn && <SearchBar onSubmit={handleSearch} />}
+      {loggedIn && weather && <WeatherCard 
+        location={weather.location}
+        weather={weather.weather}
+      />}
   );
 };
 
