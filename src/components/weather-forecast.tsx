@@ -16,6 +16,7 @@ const WeatherForecast: React.FC<WeatherForecastProps> = ({data}) => {
                 const weatherData = data[date];
                 return (
                     <WeatherCard
+                        key={date}
                         location={weatherData.location}
                         weather={weatherData.weather}
                     />

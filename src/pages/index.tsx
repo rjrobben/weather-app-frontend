@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
 import {SignUp, Login} from '../components/auth';
 import SearchBar from '../components/search-bar';
-import WeatherCard from '../components/weather-card';
-import WeatherForecast from '../components/weather-forecast';
-import { WeatherCardProps } from '../components/weather-card';
-import { WeatherForecastProps } from '../components/weather-forecast';
+import WeatherCard, {WeatherCardProps} from '../components/weather-card';
+import WeatherForecast, {WeatherForecastProps} from '../components/weather-forecast';
+
 
 const Home: React.FC = () => {
   const [loggedIn, setLoggedIn] = useState(false);
@@ -66,7 +65,7 @@ const Home: React.FC = () => {
       )
       .then((data) => {
         console.log(data);
-        setForecast(data.forecast);
+        setForecast(data);
       })
       .catch((error) => {console.log(error)});
   };
@@ -91,7 +90,7 @@ const Home: React.FC = () => {
         weather={weather.weather}
       />}
       {/* forecast for three days WeatherCard */}
-      {loggedIn && forecast && <WeatherForecast data={forecast} />}
+      {loggedIn && forecast && <WeatherForecast data={forecast.forecast} />}
 
     </div>
   );
